@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="calculator">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculation Tool</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="../angular/angular.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+<div id="calculator" ng-controller="calController">
+    <main>
+        <section>
+            <div>
+                <h4>Incandesccent</h4>
+                <p>{{watt.inc}}</p>
+                <p>{{price.inc}}</p>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h4>Halogen</h4>
+                <p>{{watt.hal}}</p>
+                <p>{{price.hal}}</p>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h4>CFL</h4>
+                <p>{{watt.cfl}}</p>
+                <p>{{price.cfl}}</p>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h4>LED</h4>
+                <p>{{watt.led}}</p>
+                <p>{{price.led}}</p>
+            </div>
+        </section>
+        <div class="clearfix"></div>
+    </main>
+    <form>
+        <div>
+            <h4>Lumens</h4>
+            <p>Brightness <br>of bulb</p>
+            <select ng-change="calc()" ng-model="current_lumen" ng-options="o as o for o in lumen_options">
+            </select>
+        </div>
+        <div>
+            <h4>kWh</h4>
+            <p>Kilowatt-<br>hour cost</p>
+            <input ng-change="calc()" ng-model="hourCost" value="{{hourCost}}" type="number">cents
+        </div>
+        <div>
+            <h4>Hours</h4>
+            <p>Usage per day</p>
+            <input ng-change="calc()" ng-model="hoursPerDay" type="number" value="{{hoursPerDay}}"> hours
+        </div>
+        <div class="clearfix"></div>
+    </form>
+</div>
+</body>
+</html>

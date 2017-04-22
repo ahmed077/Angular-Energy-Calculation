@@ -1,0 +1,72 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family: Cursive;}
+.clearfix{clear:both;}
+h4{text-align:center;padding-top:10px;text-transform: uppercase;letter-spacing:1px;margin-bottom:10px;}
+#calculator{
+    border:3px solid white;
+    margin:50px auto;
+}
+#calculator section {
+    width:25%;
+    float:left;
+    color:white;
+    padding-top:150px;
+    background-position:center 10px;
+    background-repeat:no-repeat;
+    background-size:63px 100px;
+    border-bottom:3px solid white;
+    text-align: center;
+}
+#calculator section > div:not(.clearfix) {background:rgba(0,0,0,.2);padding:20px 0;}
+#calculator section > div p {font-size:1.5em;font-weight:bold;}
+#calculator section p:first-of-type::after{content:'w';color:#f5f5f5;}
+#calculator section p:last-of-type::before{content:'$';color:#f5f5f5;}
+#calculator section p:last-of-type::after{content:'/year';color:rgba(255,255,255,.5);}
+#calculator section > div p+p {font-size:1em;padding-bottom:10px;}
+#calculator section + section {border-left:3px solid white;}
+#calculator section:first-of-type{
+    background-image:url('images/bulb_inc.svg');
+    background-color:#ba2d2d;
+}
+#calculator section:nth-of-type(2){
+    background-image:url('images/bulb_hal.svg');
+    background-color:#de6615;
+}
+#calculator section:nth-of-type(3){
+    background-image:url('images/bulb_cfl.svg');
+    background-color:#efc20f;
+}
+#calculator section:last-of-type{
+    background-image:url('images/bulb_led.svg');
+    background-color:#36b23c;
+}
+/*#calculator form{overflow:hidden;}*/
+#calculator form div:not(.clearfix){
+    width:33.33333%;
+    float:left;
+}
+#calculator form{background:#444;color:white;padding:20px;text-align: center}
+#calculator form div + div {border-left:3px solid white;}
+#calculator form p:first-of-type{margin-bottom:10px;}
+#calculator form input{width:50px;font-weight:bold}
+#calculator form select{
+    font-weight:bold;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image:url(images/icons_arrows.svg);
+    background-repeat:no-repeat;
+    background-position:right 7px;
+    padding:5px 20px 5px 5px;
+    border:none;
+    border-radius:5px;
+    background-color:skyblue;
+    color:white;
+    background-size:15px;
+    height:30px;
+    width:60px;
+}
+@media(min-width:768px) {
+    #calculator{width:70%;}
+    #calculator form br{display:none;}
+}
